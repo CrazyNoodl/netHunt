@@ -1,0 +1,34 @@
+@import "reset";
+@import "variables";
+@import "mixins";
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  background-color: $background-color;
+  @include main-font;
+  font-size: $main-size;
+  font-weight: $main-weight;
+  line-height: $main-height;
+  color: $main-color;
+  min-width: 320px;
+}
+
+// @import "select";
+// @import 'button';
+// @import 'input';
+// @import "card";
+@import "container";
+@import "download";
+@import "title";
+@import "list";
+@import "intro";
+@import "form";
+// @import "intro";
+// @import "search";
+// @import "filter";
+// @import "entertainment";
+// @import "offer";
+// @import "footer";

@@ -1,0 +1,15 @@
+.download {
+  width: 65px;
+  height: 55px;
+  border-radius: 5px 0 0 5px;
+  background: #ffb100 url(../img/img_button.svg) center no-repeat;
+  box-shadow: 0 10px 24px 0 rgba(10, 45, 62, 0.18);
+  cursor: pointer;
+  z-index: 101;
+  transition: box-shadow 175ms ease;
+
+  &:hover {
+    background-color: darken($second-thems-color, 5);
+    box-shadow: none;
+  }
+}

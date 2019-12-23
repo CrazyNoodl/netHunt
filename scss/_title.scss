@@ -1,0 +1,15 @@
+.title {
+  font-size: 48px;
+  @include title-font;
+  color: $title-color;
+  line-height: 1.25;
+  font-weight: $bold-weight;
+
+  @include mobile8p {
+    font-size: 22px;
+  }
+
+  &--less {
+      font-size: 20px;
+  }
+}
