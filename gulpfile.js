@@ -1,10 +1,9 @@
-let gulp = require('gulp'); //сам gulp
-let rename = require('gulp-rename'); // добавляет переменовку и минификацию
-let sass = require('gulp-sass') //комрилятов из sass в css
-let autoprefixer = require('gulp-autoprefixer') //добавляет автопрефиксер
-let sourcemaps = require('gulp-sourcemaps') //добавляет sourcemap для нормального отображения стилей в DevTools
-var browserSync = require('browser-sync').create(); // удаленный сервер
-
+let gulp = require('gulp');
+let rename = require('gulp-rename'); 
+let sass = require('gulp-sass');
+let autoprefixer = require('gulp-autoprefixer');
+let sourcemaps = require('gulp-sourcemaps');
+var browserSync = require('browser-sync').create();
 
 function css_style(done) {
   gulp.src('./scss/**/*')
@@ -20,14 +19,14 @@ function css_style(done) {
     .pipe(rename({ suffix: '.min' }))
     .pipe(sourcemaps.write('./'))
     .pipe(gulp.dest('./css/'))
-    .pipe(browserSync.stream()) // hot reload 
+    .pipe(browserSync.stream())
 
   done();
 }
 
 function watch() {
-  gulp.watch('./scss/**/*', css_style); // слежение за файлами и обновление файлов
-  gulp.watch('./**/*.html', browserReload); // слежение за файлами и обновление файлов
+  gulp.watch('./scss/**/*', css_style);
+  gulp.watch('./**/*.html', browserReload);
 }
 
 function sync() {
@@ -42,10 +41,5 @@ function browserReload(done) {
   browserSync.reload();
 }
 
-// exports.default = defaultSomeTask;
-
 gulp.task('default', gulp.parallel(sync, watch))
 gulp.task(sync);
-
-// gulp.task(css_style);
-// gulp.task(print);
